@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - GreenLeaf Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="GLW logo.png" />
+  <style>
+    :root {
+      --primary: #A8D5BA;
+      --secondary: #6B4226;
+      --accent: #F5ECD2;
+      --text: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--accent);
+      color: var(--text);
+    }
+
+    .blog-header {
+      text-align: center;
+      padding: 3rem 2rem;
+      background-color: var(--primary);
+      color: var(--secondary);
+    }
+
+    .blog-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .blog-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .blog-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .blog-card h3 {
+      color: var(--secondary);
+      margin: 0.8rem 0 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--secondary);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="blog-header">
+    <h1>Health & Wellness Blog</h1>
+    <p>Explore natural remedies, healthy habits, and more.</p>
+  </section>
+
+  <section class="blog-grid">
+    <div class="blog-card" onclick="window.location.href='article1.html';">
+      <img src="meditation.jpeg" alt="Meditation">
+      <h3>5-Minute Daily Meditation for Busy People</h3>
+    </div>
+    <div class="blog-card" onclick="window.location.href='article2.html';">
+      <img src="herbs.jpeg" alt="Herbal Remedies">
+      <h3>Top 5 Herbal Teas That Help Balance Hormones Naturally</h3>
+    </div>
+    <div class="blog-card" onclick="window.location.href='article3.html';">
+      <img src="health.jpeg" alt="Healthy Eating">
+      <h3>How to Stop Binge Eating Without Feeling Deprived</h3>
+    </div>
+    <div class="blog-card" onclick="window.location.href='article4.html';">
+        <img src="healthy food.jpeg" alt="Immune Sysytem">
+        <h3>10 Superfoods That Naturally Boost Your Immune System</h3>
+      </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> GreenLeaf Wellness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

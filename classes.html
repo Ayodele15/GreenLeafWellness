@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="GLW logo.png" />
+  <title>Classes - GreenLeaf Wellness</title>
+  <style>
+    :root {
+      --primary: #A8D5BA;
+      --secondary: #6B4226;
+      --accent: #F5ECD2;
+      --text: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--accent);
+      color: var(--text);
+    }
+
+    .classes-banner {
+      background-color: var(--primary);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--secondary);
+    }
+
+    .classes-banner h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .classes-banner p {
+      font-size: 1.2rem;
+    }
+
+    .classes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .class-item {
+      background: white;
+      border-left: 6px solid var(--secondary);
+      padding: 1.5rem;
+      width: 300px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .class-item:hover {
+      transform: scale(1.03);
+    }
+
+    .class-item h3 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .class-item p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .classes-banner h1 {
+        font-size: 2rem;
+      }
+
+      .class-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="classes-banner">
+    <h1>Wellness Classes</h1>
+    <p>Discover a range of classes to harmonize your body and mind.</p>
+  </section>
+
+  <!-- Classes List -->
+  <section class="classes-container">
+    <div class="class-item">
+      <h3>Gentle Morning Yoga</h3>
+      <p>Ease into your day with light stretches and mindful breathing.</p>
+    </div>
+    <div class="class-item">
+      <h3>Mindful Meditation</h3>
+      <p>Daily sessions to center your thoughts and relieve stress.</p>
+    </div>
+    <div class="class-item">
+      <h3>Restorative Flow</h3>
+      <p>Calming routines to improve flexibility and inner peace.</p>
+    </div>
+    <div class="class-item">
+      <h3>Evening Wind Down</h3>
+      <p>Unplug and decompress with gentle poses and aromatherapy.</p>
+    </div>
+    <div class="class-item">
+      <h3>Chakra Healing Class</h3>
+      <p>Align your energy through guided movement and sound therapy.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> GreenLeaf Wellness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

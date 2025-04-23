@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services - GreenLeaf Wellness</title>
+  <link rel="icon" type="image/png" href="GLW logo.png" />
+  <style>
+    :root {
+      --primary: #A8D5BA;
+      --secondary: #6B4226;
+      --accent: #F5ECD2;
+      --text: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--accent);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page-intro {
+      padding: 3rem 1.5rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .page-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .page-intro p {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .services-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card h2 {
+      color: var(--secondary);
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    footer {
+      background-color: var(--accent);
+      color: var(--text);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-intro h1 {
+        font-size: 1.8rem;
+      }
+
+      .services-section {
+        padding: 2rem 1rem;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Intro -->
+  <section class="page-intro">
+    <h1>Our Holistic Services</h1>
+    <p>Experience complete rejuvenation with our wide range of natural therapies.</p>
+  </section>
+
+  <!-- Main Content -->
+  <section class="services-section">
+    <div class="service-card">
+      <h2>Yoga Therapy</h2>
+      <p>Reconnect your mind and body with guided yoga sessions tailored for stress relief and flexibility.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Meditation & Mindfulness</h2>
+      <p>Explore calmness with mindfulness training and guided meditation techniques.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Massage & Bodywork</h2>
+      <p>Enjoy healing touch therapies designed to reduce pain and improve circulation.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Detox Programs</h2>
+      <p>Participate in gentle detox routines to eliminate toxins and boost vitality.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Aromatherapy</h2>
+      <p>Harness the power of essential oils to ease tension, enhance sleep, and uplift your mood.</p>
+    </div>
+
+    <div class="service-card">
+      <h2>Nutrition & Wellness Coaching</h2>
+      <p>Get personalized wellness plans and dietary advice from certified professionals.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> GreenLeaf Wellness. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GreenLeaf Wellness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="icon" type="image/png" href="GLW logo.png" />
+
+  <style>
+    :root {
+    --primary: #A8D5BA;
+    --secondary: #6B4226;
+    --accent: #F5ECD2;
+    --text: #333333;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--accent);
+    color: var(--text);
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  nav {
+    display: flex;
+    gap: 25px;
+  }
+
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--secondary);
+    transition: width 0.4s ease;
+  }
+
+  nav a:hover {
+    color: var(--secondary);
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100%;
+      width: 250px;
+      background: var(--primary);
+      flex-direction: column;
+      padding-top: 80px;
+      transition: right 0.4s ease-in-out;
+      gap: 20px;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    }
+
+    nav.open {
+      right: 0;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('hero image.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-overlay {
+  background: rgba(168, 213, 186, 0.65); /* Soft green overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  text-align: center;
+  color: var(--text);
+  max-width: 800px;
+  animation: slideUp 1.2s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.hero-content h1 span {
+  color: var(--text);
+  background: var(--accent);
+  padding: 0 8px;
+  border-radius: 5px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.cta-btn {
+  background-color: var(--secondary);
+  color: var(--accent);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(107, 66, 38, 0.4);
+}
+
+.cta-btn:hover {
+  background-color: var(--text);
+  color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(107, 66, 38, 0.7);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+.services,
+.testimonials {
+  padding: 4rem 2rem;
+  background: var(--accent);
+  text-align: center;
+  color: var(--text);
+}
+
+.services h2,
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.services-grid,
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.service-card,
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 1s ease;
+}
+
+.service-card h3,
+.testimonial-card h4 {
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.service-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .services h2,
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+}
+
+ /* Footer Section */
+ .footer {
+    background-color: #6b4226;
+    color: #f5ecd2;
+    padding: 60px 30px;
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  /* Footer Contact */
+  .footer-contact h3, .footer-links h3, .footer-social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #f5ecd2;
+  }
+
+  .footer-contact p, .footer-links ul li, .footer-social a {
+    font-size: 1rem;
+    color: #f5ecd2;
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer-links ul li a {
+    color: #f5ecd2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+    color: #a8d5ba;
+  }
+
+  .footer-social a {
+    color: #f5ecd2;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    color: #a8d5ba;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .footer-bottom p {
+    font-size: 1rem;
+    color: #f5ecd2;
+  }
+
+  /* Subtle Animation for Links and Social Icons */
+  .footer-links ul li a, .footer-social a {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover, .footer-social a:hover {
+    transform: scale(1.1);
+    color: #a8d5ba;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-contact, .footer-links, .footer-social {
+      margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="GLW logo.png" alt="Logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <a href="#">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="classes.html">Classes</a>
+      <a href="blog.html">Blog</a>
+      <a href="contactus.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Welcome to <span>GreenLeaf Wellness</span></h1>
+        <p>Your sanctuary for Yoga, Meditation, and Natural Healing.</p>
+        <a href="#services" class="cta-btn">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services -->
+<section class="services" id="services">
+  <h2>Our Featured Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Yoga</h3>
+      <p>Enhance your flexibility and peace of mind with our expert-led yoga classes.</p>
+    </div>
+    <div class="service-card">
+      <h3>Meditation</h3>
+      <p>Experience inner calm and mental clarity through guided meditation sessions.</p>
+    </div>
+    <div class="service-card">
+      <h3>Natural Therapies</h3>
+      <p>Heal and rejuvenate naturally with our herbal and holistic therapies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"GreenLeaf Wellness helped me find peace and balance in my chaotic life. The meditation sessions are a blessing!"</p>
+      <h4>- Amaka E.</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Their yoga classes are both calming and energizing. The instructors are patient and skilled."</p>
+      <h4>- Daniel O.</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"I loved the natural therapies. I felt refreshed and healed holistically after every visit!"</p>
+      <h4>- Ifeoma N.</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Contact Information -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: info@greenleafwellness.com</p>
+      <p>Phone: +1 (234) 567-8901</p>
+      <p>Address: 123 Wellness St, Serenity Town</p>
+    </div>
+
+    <!-- Useful Links -->
+    <div class="footer-links">
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="t&c.html">Terms & Condition</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> GreenLeaf Wellness. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - GreenLeaf Wellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="GLW logo.png" />
+  <style>
+    :root {
+      --primary: #A8D5BA;
+      --secondary: #6B4226;
+      --accent: #F5ECD2;
+      --text: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background-color: var(--accent);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      color: var(--secondary);
+      font-size: 2.5rem;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .intro, .mission {
+      margin-bottom: 2rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .intro h2, .mission h2, .team h2 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .team {
+      text-align: center;
+    }
+
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .member {
+      background: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    .member h3 {
+      margin: 0.8rem 0 0.2rem;
+      color: var(--secondary);
+    }
+
+    .member p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About GreenLeaf Wellness</h1>
+  </header>
+
+  <div class="about-container">
+    <section class="intro">
+      <h2>Welcome to GreenLeaf Wellness</h2>
+      <p>
+        At GreenLeaf Wellness, we are dedicated to nurturing your body, mind, and spirit through holistic practices. Our serene environment and experienced practitioners offer services in yoga, meditation, and natural therapies to support your wellness journey.
+      </p>
+    </section>
+
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to create a haven where individuals can reconnect with themselves and find balance in a natural, supportive setting. We believe in empowering our clients with tools and techniques that promote long-lasting wellbeing.
+      </p>
+    </section>
+
+    <section class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-members">
+        <div class="member">
+          <img src="Amaka Bello.png" alt="Team Member 1" />
+          <h3>Amaka Bello</h3>
+          <p>Certified Yoga Instructor with over 10 years of experience in mindfulness and restorative yoga.</p>
+        </div>
+        <div class="member">
+          <img src="john olu.png" alt="Team Member 2" />
+          <h3>John Olu</h3>
+          <p>Holistic Therapist specializing in herbal remedies and stress relief treatments.</p>
+        </div>
+        <div class="member">
+          <img src="brooklyn peters.png" alt="Team Member 3" />
+          <h3>Brooklyn Peters</h3>
+          <p>Meditation Coach with a passion for guiding clients into deeper self-awareness and healing.</p>
+        </div>
+        <div class="member">
+          <img src="noah elijah.png" alt="Team Member 4" />
+          <h3>Noah Elijah</h3>
+          <p>Empowering individuals to achieve wellness through natural solutions and compassionate care.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
